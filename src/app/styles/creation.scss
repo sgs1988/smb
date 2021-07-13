@@ -1,0 +1,225 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins";
+
+.stepConnector {
+  height: 5px;
+  background-color: $nGray4;
+}
+.awaitingConnector {
+  background-color: $nLightBlue;
+}
+.approvalConnector {
+  background-color: $nYellow;
+}
+mat-sidenav-container {
+  margin-right: -5px;
+  background: none;
+}
+
+.creation-sidenav {
+  user-select: none;
+  border-right: none;
+  width: 100%;
+  background: none;
+  position: static;
+}
+.creation-sidenav-content {
+  display: block;
+  border: 5px solid $nLightBlue;
+  // width: 100%;
+}
+
+.creation-nav-list {
+  overflow-x: hidden;
+  padding: 0px;
+}
+.list-item {
+  pointer-events: none;
+  background: #4c4b5d 0% 0% no-repeat padding-box;
+  color: $nWhite;
+  border-right: 5px solid $nLightBlue;
+  width: calc(100% - 5px) !important;
+  margin-bottom: 1px;
+  height: 40px !important;
+  position: relative;
+  font-weight: 500;
+
+  mat-icon {
+    font-size: $iconSize18;
+    position: absolute;
+    right: 15px;
+  }
+  &:hover {
+    color: $nBlack;
+  }
+}
+.valid-list {
+  pointer-events: initial;
+  background-color: $nBlue;
+}
+
+.active-list {
+  background-color: $nLightBlue;
+  color: black;
+  &::before {
+    content: " ";
+    width: 5px;
+    height: 1px;
+    background-color: $nWhite;
+    position: absolute;
+    right: -5px;
+    top: -1px;
+  }
+  &::after {
+    content: " ";
+    width: 5px;
+    height: 1px;
+    background-color: $nWhite;
+    position: absolute;
+    right: -5px;
+    bottom: -1px;
+  }
+  &:first-child {
+    &::before {
+      display: none;
+    }
+  }
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.selectable-list {
+  pointer-events: initial;
+}
+
+.form-section {
+  margin-bottom: 50px;
+  margin-top: 16px;
+}
+
+.prev-next-button {
+  background-color: $nGreen;
+  color: $nWhite;
+  border-radius: 6px;
+}
+
+.form-actions {
+  padding: 10px;
+  .cancel-form {
+    background-color: $nRed;
+    color: $nWhite;
+  }
+  .save-form {
+    background-color: $nLightBlue;
+    color: $nWhite;
+  }
+  .submit-form {
+    background-color: $nGreen;
+    color: $nWhite;
+  }
+}
+
+::ng-deep .mat-drawer-content {
+  margin: 0 !important;
+  display: none !important;
+}
+
+.creation {
+  .requst-button {
+    margin-top: 32px;
+    button {
+      background-color: $nGray4;
+      img {
+        padding-bottom: 8px;
+      }
+    }
+    .submittin-step {
+      background-color: $nLightBlue;
+      color: $nLightBlue;
+    }
+    .awaiting-step {
+      background-color: $nYellow;
+      color: $nYellow;
+    }
+    .approval-step {
+      background-color: $nOrange;
+      color: $nOrange;
+    }
+    .approved-step {
+      background-color: $nGreen;
+      color: $nGreen;
+    }
+    .rejected-step {
+      background-color: $nRed;
+      color: $nRed;
+    }
+    .sentback-step {
+      background-color: $nOrange;
+      color: $nOrange;
+    }
+    .approval-status {
+      img {
+        padding-left: 4px;
+        padding-bottom: 6px;
+      }
+    }
+  }
+  .request-name {
+    > div {
+      max-width: calc(65% + 200px) !important;
+      margin-left: -50px !important;
+      margin-right: -50px !important;
+    }
+    .stepper-label {
+      @include font-size(1.4);
+      font-weight: bold;
+      color: $nGray4;
+      text-align: center;
+    }
+    .stepper-label-info {
+      @include font-size(0.9);
+      color: $nGray4;
+      text-align: center;
+    }
+    .submittin-step-name {
+      color: $nLightBlue;
+    }
+    .awaiting-step-name {
+      color: $nAwaiting;
+    }
+    .approval-step-name {
+      color: $nOrange;
+    }
+    .approved-step-name {
+      color: $nGreen;
+    }
+    .rejected-step-name {
+      color: $nRed;
+    }
+    .sentBack-step-name {
+      color: $nOrange;
+    }
+  }
+  .employee-details {
+    margin-top: 24px;
+    margin-bottom: 5px;
+    @include font-size(1);
+    .employee-details-left {
+      color: $nBlue;
+      margin-right: -150px;
+    }
+    .seperate {
+      margin-left: 5px;
+      margin-right: 5px;
+      font-weight: bold;
+    }
+  }
+}
+
+button:disabled,
+.mat-button-disabled {
+  background-color: $nGray2 !important;
+}
